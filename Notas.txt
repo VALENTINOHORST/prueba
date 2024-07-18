@@ -1,0 +1,64 @@
+En total hay 11 archivos que contienen la siguiente informacion:
+Nivel 1: NACIONALIDAD, FECHA DE NACIMIENTO, TIPO DE VISITA, DURACION DE LA ESTANCIA, ESTADO CIVIL.
+Nivel 2: + PAIS DE RESIDENCIA, PROPOSITO DEL VIAJE.
+Nivel 3: + SI VIAJA SOLA O ACOMPAÑADA.
+Nivel 4: + ELEMENTOS, OCUPACION, PAISES ANTERIORES.
+Nivel 5: Si le erra se termino el juego.
+
+Tambien hay un archivo que contiene los tipos de persona: Aldeano, Refugiado politico, Diplomático, Revolucionario.
+
+Zinjai mala onda no quiere compilar el programa si tiene archivos tipo clase.
+g++ main.cpp Menu.cpp Persona.cpp -o Programa
+
+Para aclarar un toque/pseudo documentacion:
+clase persona:
+va a tener los atributos 
+NACIONALIDAD
+FECHA DE NACIMIENTO
+TIPO DE VISITA
+DURACION DE LA ESTANCIA
+ESTADO CIVIL
+PAIS DE RESIDENCIA
+PROPOSITO DEL VIAJE
+SI VIAJA SOLA O ACOMPAÑADA
+ELEMENTOS
+OCUPACION
+PAISES ANTERIORES
+****AGREGAR NOMBRE (otro archivo con nombres al azar)****
+que se van a mostrar o no dependiendo de si esta seteado como 
+ALDEANO:         10 de bonus, -15 de penalizacion 
+POLITICO         15 de bonus, -25 de penalizacion 
+DIPLOMATICO      25 de bonus, -25 de penalizacion 
+REVOLUCIONARIO   NO ENTRA, -25 de penalizacion 
+
+class Persona {
+algo NOMBRE
+algo NACIONALIDAD
+algo FECHA DE NACIMIENTO
+algo TIPO DE VISITA
+algo DURACION DE LA ESTANCIA
+algo ESTADO CIVIL
+algo PAIS DE RESIDENCIA
+algo PROPOSITO DEL VIAJE
+algo SI VIAJA SOLA O ACOMPAÑADA
+algo ELEMENTOS
+algo OCUPACION
+algo PAISES ANTERIORES
+
+ void Persona::generapersona(){
+	ifstream NAC("NACIONALIDAD.txt");
+	if (NAC.fail()) {
+		cout<<"Error en la apertura del archivo"<<endl;
+	} else {
+		int cont=0, linea;
+		string pais;
+		while(!NAC.eof()) {
+			cont++;
+		}
+		linea= rand()%(cont+1);
+		for (int i=0; i<linea;i++) {
+			getline(NAC,pais);
+		}
+		NACIONALIDAD=pais;
+	}
+}
